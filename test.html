@@ -2141,7 +2141,7 @@ var map,infoWindow;
       }
       
         // Create the search box and link it to the UI element.
-        var input = document.getElementById('reservation-form');
+        var input = document.getElementById('sel');
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         // Bias the SearchBox results towards current map's viewport.
@@ -2200,7 +2200,7 @@ var map,infoWindow;
 	<div class="header-top">
 		<div class="wrap">
 			<div class="banner-no">
-		  		<a href="index.html"><img src="images/hcm.png" alt=""/>
+		  		<a href="index.html"><img src="hcm.png" alt=""/>
 		    </div>
 			  <div class="nav-wrap">
 					<ul class="group" id="example-one">
@@ -2223,8 +2223,8 @@ var map,infoWindow;
 		       <fieldset>
 		                <div class="field">
 			                 <label>Find a Doctor:</label>
-			                  <select class="select2">
-			                    <option>Ortho</option>
+			                  <select class="select2" id="sel">
+			                    <option value="ortho">Ortho</option>
 			                  </select>
 			            </div>
 		               
