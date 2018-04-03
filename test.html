@@ -2171,7 +2171,7 @@ var map,infoWindow;
             var icon = {
               url: place.icon,
               size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
+              origin: new google.maps.Point(50, 50),
               anchor: new google.maps.Point(17, 34),
               scaledSize: new google.maps.Size(25, 25)
             };
@@ -2180,7 +2180,7 @@ var map,infoWindow;
               map: map,
               icon: icon,
               title: place.name,
-              position: pos
+              position: place.geometry.location
             }));
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
