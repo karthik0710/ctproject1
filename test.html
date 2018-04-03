@@ -4,6 +4,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Places Searchbox</title>
+	<link type="text/css" rel="stylesheet" href="http://www.dreamtemplate.com/dreamcodes/tabs/css/tsc_tabs.css" />
+ <!-- jQuery Library (skip this step if already called on page ) -->
+<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/jquery.min.js"></script> <!-- (do not call twice) -->
+ <!-- DC Tabs JS -->
+<!--<script type="text/javascript" src="http://www.dreamtemplate.com/dreamcodes/tabs/js/tsc_tabs.js"></script>-->
+<link rel="stylesheet" href="css/tsc_tabs.css" type="text/css" media="all" />
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -21,19 +27,15 @@
         font-size: 15px;
         font-weight: 300;
       }
-
       #infowindow-content .title {
         font-weight: bold;
       }
-
       #infowindow-content {
         display: none;
       }
-
       #map #infowindow-content {
         display: inline;
       }
-
       .pac-card {
         margin: 10px 10px 0 0;
         border-radius: 2px 0 0 2px;
@@ -44,23 +46,19 @@
         background-color: #fff;
         font-family: Roboto;
       }
-
       #pac-container {
         padding-bottom: 12px;
         margin-right: 12px;
       }
-
       .pac-controls {
         display: inline-block;
         padding: 5px 11px;
       }
-
       .pac-controls label {
         font-family: Roboto;
         font-size: 13px;
         font-weight: 300;
       }
-
       #pac-input {
         background-color: #fff;
         font-family: Roboto;
@@ -71,11 +69,9 @@
         text-overflow: ellipsis;
         width: 400px;
       }
-
       #pac-input:focus {
         border-color: #4d90fe;
       }
-
       #title {
         color: #fff;
         background-color: #4d90fe;
@@ -91,7 +87,6 @@
       // This example adds a search box to a map, using the Google Place Autocomplete
       // feature. People can enter geographical searches. The search box will return a
       // pick list containing a mix of places and predicted search terms.
-
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
@@ -103,7 +98,6 @@ var map,infoWindow;
           zoom: 6
         });
         infoWindow = new google.maps.InfoWindow;
-
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -111,7 +105,6 @@ var map,infoWindow;
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
@@ -131,33 +124,27 @@ var map,infoWindow;
         infoWindow.open(map);
       }
       
-
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
         });
-
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
         searchBox.addListener('places_changed', function() {
           var places = searchBox.getPlaces();
-
           if (places.length == 0) {
             return;
           }
-
           // Clear out the old markers.
           markers.forEach(function(marker) {
             marker.setMap(null);
           });
           markers = [];
-
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
@@ -172,7 +159,6 @@ var map,infoWindow;
               anchor: new google.maps.Point(17, 34),
               scaledSize: new google.maps.Size(25, 25)
             };
-
             // Create a marker for each place.
             markers.push(new google.maps.Marker({
               map: map,
@@ -180,7 +166,6 @@ var map,infoWindow;
               title: place.name,
               position: place.geometry.location
             }));
-
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
               bounds.union(place.geometry.viewport);
@@ -191,10 +176,75 @@ var map,infoWindow;
           map.fitBounds(bounds);
         });
       }
-
     </script>
   </head>
   <body>
+  <body>
+<div class="header">
+	<div class="header-top">
+		<div class="wrap">
+			<div class="banner-no">
+		  		<a href="index.html"><img src="images/hcm.png" alt=""/>
+		    </div>
+			  <div class="nav-wrap">
+					<ul class="group" id="example-one">
+			           <li class="current_page_item"><a href="index.html">Home</a></li>
+			           <li><a href="about.html">View</a></li>
+			  		   <li><a href="movies_events.html">Rate</a></li>
+			  		   <li><a href="contact.html">Contact</a></li>
+			        </ul>
+			  </div>
+ 			<div class="clear"></div>
+   		</div>
+    </div>
+	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div class="block">
+	<div class="wrap">
+		<div class="h-logo">
+			<img src="images/hcm1.png" alt=""/>
+		</div>
+        <form action="#" id="reservation-form">
+		       <fieldset>
+		                <div class="field">
+			                 <label>Find a Doctor:</label>
+			                  <select class="select2">
+			                    <option>Ortho</option>
+			                  </select>
+			            </div>
+		                <div class="field1">
+			                   <label>Search</label>
+			                  <select class="select1">
+			                    <option>Search a Doctor</option>
+			                  </select>
+		                </div>
+		       </fieldset>
+            </form>
+            <div class="clear"></div>
+   </div>
+</div>
+<div class="banner">
+ <div class="wrap">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+            <li>
+  	    	    <img src="images/banner1.jpg" alt=""/>
+  	    	</li>
+  	    	<li>
+  	    	    <img src="images/banner.jpg"  alt=""/>
+  	    	</li>
+  	    	<li>
+  	    	    <img src="images/banner2.jpg"  alt=""/>
+  	    	</li>
+  	    	<li>
+  	    	    <img src="images/banner3.jpg"  alt=""/>
+  	    	</li>
+          </ul>
+        </div>
+      </section>
+   </div>
+</div>
+</div>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
     
