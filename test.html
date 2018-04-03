@@ -2141,7 +2141,7 @@ var map,infoWindow;
       }
       
         // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
+        var input = document.getElementById('reservation-form');
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         // Bias the SearchBox results towards current map's viewport.
@@ -2227,12 +2227,7 @@ var map,infoWindow;
 			                    <option>Ortho</option>
 			                  </select>
 			            </div>
-		                <div class="field1">
-			                   <label>Search</label>
-			                  <select class="select1">
-			                    <option>Search a Doctor</option>
-			                  </select>
-		                </div>
+		               
 		       </fieldset>
             </form>
             <div class="clear"></div>
@@ -2261,7 +2256,7 @@ var map,infoWindow;
    </div>
 </div>
 </div>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    
     <div id="map"></div>
     
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVTuFfJz3ULipvfO1PYH5IsRIpRXCRnK4&libraries=places&callback=initAutocomplete"
