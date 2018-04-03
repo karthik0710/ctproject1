@@ -2180,7 +2180,7 @@ var map,infoWindow;
               map: map,
               icon: icon,
               title: place.name,
-              position: pos
+              position: place.geometry.location
             }));
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
@@ -2191,7 +2191,7 @@ var map,infoWindow;
           });
           map.fitBounds(bounds);
         });
-	      map.setCenter({ lat: 18, lng: 49 })
+	      
       }
     </script>
   </head>
