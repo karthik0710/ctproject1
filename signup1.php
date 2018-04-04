@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 if(isset($_POST['submit']))
 {
     $sql = "INSERT INTO users (username, password, email)
-    VALUES ('".$_POST["email"]."','".$_POST["password"]."','".$_POST["phn"]."')";
+    VALUES ('".$_POST["email"]."','".$_POST["psw"]."','".$_POST["phn"]."')";
 
     $result = mysqli_query($conn,$sql);
 }
